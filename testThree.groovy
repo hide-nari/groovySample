@@ -11,7 +11,7 @@ println(person1.age)
 println(person1.getName())
 println(person1.getAge())
 
-def person2 = new Person(name: "taro", age: 15)
+var person2 = new Person(name: "taro", age: 15)
 println(person2.getName())
 println(person2.getAge())
 

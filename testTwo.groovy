@@ -5,5 +5,5 @@ new File(args[0]).eachLine {
     }
 }
 map.entrySet().sort { it.value }.reverse().each {
-    println "${it.key}:${it.value}"
+    println "$it.key:${it.value}"
 }
