@@ -6,12 +6,19 @@ testFun()
 
 println(args[0])
 
-def array = [1, 2, 3, "a", "b", "c"]
+for (i in 0..<3) {
+    println("for loop:" + i)
+}
+
+def array = [1, "a", "b"]
 array.each {
-    println(it)
+    println("array each:" + it)
+}
+for (item in array) {
+    println("array for" + item)
 }
 
 def map = [a: 123, b: 456]
 map.each {
-    println(it.key + ":" + it.value)
+    println("map each:" + it.key + ":" + it.value)
 }
