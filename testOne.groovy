@@ -4,6 +4,12 @@ println(testOne)
 testFun = { println("test fun") }
 testFun()
 
+closure = { name, age -> println("closure:" + name + ":" + age) }
+closure("taro", 15)
+
+closureOne = { println("closureOne:" + it) }
+closureOne("closure param")
+
 def testOneFun(name = "taro") {
     println("testOneFun:" + name)
 }
@@ -30,6 +36,12 @@ for (i in 0..<3) {
     println("for loop:" + i)
 }
 
+def number = 0;
+3.times {
+    number++
+    println("times syntax:" + number)
+}
+
 def array = [1, "a", "b"]
 array.each {
     println("array each:" + it)
@@ -42,3 +54,9 @@ def map = [a: 123, b: 456]
 map.each {
     println("map each:" + it.key + ":" + it.value)
 }
+
+def listOne = (1..10).grep { it % 2 == 0 }
+println(listOne)
+
+def listTwo = (1..10).collect { it * 2 }
+println(listTwo)
