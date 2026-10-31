@@ -33,7 +33,15 @@ testThreeFun("jiro", 15)
 println(args[0])
 
 for (i in 0..<3) {
-    println("for loop:" + i)
+    println("for loop one:" + i)
+}
+
+for (i in 0..3) {
+    println("for loop two:" + i)
+}
+
+for (def i : 0..3) {
+    println("for loop three:" + i)
 }
 
 def number = 0;
@@ -60,3 +68,29 @@ println(listOne)
 
 def listTwo = (1..10).collect { it * 2 }
 println(listTwo)
+
+strFlg = 3;
+if (strFlg == 1) {
+    println("one")
+} else if (strFlg == 2) {
+    println("two")
+} else {
+    println("default")
+}
+
+switch (strFlg) {
+    case 1:
+        println("one")
+        break
+    case 2:
+        println("two")
+        break
+    default:
+        println("default")
+}
+
+// no try catch
+Thread.sleep(1000);
+
+assert strFlg == 3 : "assert test"
+
