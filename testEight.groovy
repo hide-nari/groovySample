@@ -2,6 +2,7 @@ import groovy.swing.SwingBuilder
 
 import javax.swing.WindowConstants as WC
 import java.awt.BorderLayout as BL
+import java.awt.FlowLayout as FL
 
 data = [
         [id: 1, item: 'one'],
@@ -28,6 +29,29 @@ frame = swing.frame(title: 'タイトル',
         scrollPane {
             widget(table)
         }
+    }
+    panel(constraints: BL.SOUTH) {
+        button(text: 'Insert Record', actionPerformed: { event ->
+            dialog.show()
+        })
+    }
+}
+
+dialog = swing.dialog(size: [350, 250], layout: new FL()) {
+    panel({ label 'ID'; textField(id: 'id', columns: 20) })
+    panel({ label 'Item'; textField(id: 'item', columns: 20) })
+    panel {
+        button(text: 'PUSH', actionPerformed: { event ->
+            data << [
+                    'id'  : swing.id.text,
+                    'item': swing.item.text
+            ]
+            table.model.fireTableDataChanged()
+            dialog.hide()
+        })
+        button(text: 'CLOSE', actionPerformed: { event ->
+            dialog.hide()
+        })
     }
 }
 frame.pack()
