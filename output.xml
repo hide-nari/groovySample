@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shopping>
+  <category type="groceries">
+    <item>chocolate</item>
+    <item>coffee</item>
+  </category>
+  <category type="supplies">
+    <item>papaer</item>
+    <item quantity="4">pen</item>
+  </category>
+</shopping>
